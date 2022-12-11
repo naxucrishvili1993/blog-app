@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+	background-color: #f4ead5;
+	font-family: "Roboto", sans-serif;
+}
+.container {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	row-gap: 40px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user {
+	align-items: center;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+}
+.wrapper {
+	background-color: #fffbe9;
+	border-radius: 10px;
+	box-shadow: 0 0 80px rgba(0, 0, 0, 0.15);
+	padding: 20px 5px;
+	width: 70%;
+	word-wrap: break-word;
+}
+.wrapper img {
+	border-radius: 100%;
+}
+.wrapper p {
+	color: rgb(166, 166, 166);
+	font-size: 0.9rem;
+}
+.wrapper h1 {
+	font-size: 1.2rem;
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.btn-section {
+	display: flex;
+	justify-content: center;
+	gap: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-section button {
+	background-color: #fffbe9;
+	border: none;
+	cursor: pointer;
+}
+.btn-section button:hover i {
+	color: rgb(57, 231, 57);
+	border-top: 2px solid rgb(57, 231, 57);
 }
 
-.App-link {
-  color: #61dafb;
+.btn-section button i {
+	color: #0089ab;
+	font-size: 1.5rem;
+	transition: color 0.3s, border-top 0.1s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media screen and (min-width: 576px) {
+	.user {
+		width: 50%;
+	}
+}
+@media screen and (min-width: 992px) {
+	.user {
+		width: 30%;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.user {
+		width: 25%;
+	}
 }
