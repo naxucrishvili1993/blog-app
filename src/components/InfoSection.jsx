@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import FullProfile from "./FullProfile";
+import Navbar from "./Navbar";
 
 const InfoSection = (props) => {
 	const [paragraph, setParagraph] = useState(<p>Hi, my name is</p>);
@@ -8,6 +10,12 @@ const InfoSection = (props) => {
 	const [location, setLocation] = useState(props.fullLocation);
 	const [phoneNum, setPhoneNum] = useState(props.phone);
 	const [heading, setHeading] = useState(fName);
+	const [active, setActive] = useState(false);
+
+	active
+		? document.body.classList.add("no-scroll")
+		: document.body.classList.remove("no-scroll");
+
 	return (
 		<div className="info">
 			<p>{paragraph}</p>
@@ -53,6 +61,30 @@ const InfoSection = (props) => {
 					}}>
 					<i className="uil uil-phone"></i>
 				</button>
+			</div>
+			<button
+				className="profile-toggler-btn"
+				onClick={() => {
+					setActive((prev) => !prev);
+					props.handleClick();
+				}}>
+				View Full Info
+			</button>
+			<div className={active ? "active" : "none"}>
+				<FullProfile
+					image={props.photo}
+					fullName={fName}
+					gender={props.gender}
+					dob={props.dob}
+					age={props.age}
+					email={email}
+					phone={phoneNum}
+					fullLocation={location}
+					username={props.username}
+					handleClick={() => {
+						setActive(!active);
+					}}
+				/>
 			</div>
 		</div>
 	);

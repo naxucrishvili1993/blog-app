@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import User from "./components/User";
+import Navbar from "./components/Navbar";
 import "./App.css";
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
 
 	return (
 		<div className="container">
+			<Navbar />
+
 			{data.map((el, index) => {
 				return (
 					<User
@@ -25,11 +28,13 @@ const App = () => {
 						photo={el.picture.large}
 						fname={el.name.first}
 						lname={el.name.last}
-						gender={el.gender}
+						gender={el.gender[0].toUpperCase() + el.gender.substring(1)}
 						state={el.location.state}
 						city={el.location.city}
 						email={el.email}
 						phone={el.phone}
+						age={el.dob.age}
+						username={el.login.username}
 					/>
 				);
 			})}

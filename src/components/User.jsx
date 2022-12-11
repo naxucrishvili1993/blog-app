@@ -12,6 +12,10 @@ const User = (props) => {
 					dob={props.dob}
 					fullLocation={props.state + ", " + props.city}
 					phone={props.phone}
+					photo={props.photo}
+					gender={props.gender}
+					age={props.age}
+					username={props.username}
 				/>
 			</div>
 		</div>
